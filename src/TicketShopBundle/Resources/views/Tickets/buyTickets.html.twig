@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <h2>{{event.name}}</h>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      {{event.date|date("m/d/Y")}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      {{event.date|date("H:i:s")}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      {% form_theme form 'bootstrap_3_layout.html.twig' %}
+      {{ form(form)}}
+    </div>
+  </div>
+
+{% for ticket in tickets %}
+  <ul class="list-group">
+    <li class=list-group-item>
+      <div class="row">{{ticket.name}} </div>
+      <div class="row">{{ticket.description}} </div>
+      <div class="row">{{ticket.price}}</div>
+    </li>
+  </ul>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+index:
+  path: /
+  defaults: { _controller: TicketShopBundle:Events:selectEvent }
+
+ticket_shop:
+    resource: "@TicketShopBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{{ form(form)}}
+
+{% for event in events %}
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row">Name:{{event.name}} </div>
+    <div class="row">Fecha:{{event.date|date("m/d/Y")}} </div>
+    <div class="row">Hora:{{event.date|date("H:i:s")}}</div>
+  </li>
+</ul>
+{% endfor %}
+
+{% endblock %}

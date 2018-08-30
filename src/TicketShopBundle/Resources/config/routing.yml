@@ -1,0 +1,9 @@
+ticket_shop_select_event:
+    path:     /events/select
+    defaults: { _controller: TicketShopBundle:Events:selectEvent }
+ticket_shop_buy_tickets:
+    path:     /tickets/buy/{id_event}
+    defaults: { _controller: TicketShopBundle:Tickets:buyTickets }
+Ticket_shop_check_uuid_check:
+    path:     /api/v1/check
+    defaults: { _controller: TicketShopBundle:Api:check }
